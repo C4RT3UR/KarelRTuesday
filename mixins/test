@@ -1,0 +1,4 @@
+def task
+karel = UrRobot.new(1, 6, NORTH, 10)
+karel.move
+karel.place_beeper
