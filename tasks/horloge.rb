@@ -5,24 +5,17 @@
 require_relative "../karel/ur_robot"
 require_relative "../mixins/turner"
 # A class whose robots know how to sweep a short staircase of beepers
-class Broccoli < UrRobot
+class Horloge < UrRobot
   include Turner
 
-def step
+def temps
   turn_left
   move
   turn_right
   move
-  pick_beeper
-
+  put_beeper
 end
 
-def stairs
-	step
-	step
-	step
-
-end
 
 
 end

@@ -4,36 +4,45 @@
 
 $graphical = true
 
-require_relative "broccoli"
+require_relative "cloche"
 require_relative "../karel/robota"
 
-# a task for a stair sweeper
 def task()
-  world = Robota::World
-  world.read_world("../worlds/tache2")
   
-  karel = Broccoli.new(1, 6, Robota::NORTH, 0)
+  karel = Cloche.new(1, 6, Robota::NORTH, 26)
+  karel.put_beeper
   karel.move
-  karel.pick_beeper
-  karel.stairs
-  karel.move
-  karel.turn_right
-  karel.move
-  karel.turn_right
-  karel.pick_beeper
-  karel.stairs
+  karel.put_6
   karel.turn_left
   karel.move
   karel.turn_left
-  karel.move
-  karel.pick_beeper
-  karel.stairs
+  karel.put_5
   karel.move
   karel.turn_right
   karel.move
-  karel.turn_right
-  karel.pick_beeper
-  karel.stairs
+  karel.place
+  karel.turn_around
+  karel.put_6
+  karel.turn_left
+  karel.move
+  karel.turn_left
+  karel.place
+  karel.move
+  karel.turn_left
+  karel.move
+  karel.turn_around
+  karel.put_5
+  karel.turn_left
+  karel.move
+  karel.move
+  karel.move
+  karel.turn_left
+  karel.move
+  karel.move
+  karel.move
+  karel.place
+
+
 
   
 end
