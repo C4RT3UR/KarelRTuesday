@@ -16,12 +16,43 @@ class Moving < UrRobot
       move
     end
   end
+
+  def  recurse
+    if front_is_clear?
+      move  
+      recurse
+    end
+  end
+
+
+
+  def put_beepers(n) 
+    unless (n==0) 
+      put_beeper
+      put_beepers(n-1)    
+    end
+  end
+
+  def spiral(n) 
+    n.times do 
+      put_beeper
+      move
+    end
+    unless (n==18) 
+      turn_left
+      spiral(n+1)    
+    end
+  end
+
+
+
 end
+
 
 def task
   
-  karel = Moving.new(1, 1, Robota::NORTH, 1)
-  karel.move_until
+  karel = Moving.new(10, 11, Robota::EAST, INFINITY)
+  karel.spiral(0)
 
   
 end
